@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstroVed - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D0D1A;
+      --gold: #D4AF37;
+      --text-primary: #F0F0F0;
+      --text-secondary: #A0AEC0;
+      --card-bg: #1A1A2E;
+      --border-soft: #2A2A4A;
+    }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text-secondary);
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--text-primary);
+    }
+    .header {
+      position: sticky; top: 0;
+      background: var(--bg);
+      z-index: 1000;
+      padding: 10px 5%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .header nav a {
+      color: var(--text-secondary);
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .header nav a:hover {
+      color: var(--gold);
+    }
+    .cta {
+      background: var(--gold);
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://images.pexels.com/photos/110854/pexels-photo-110854.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+      z-index: -2;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 13, 26, 0.8);
+      z-index: -1;
+    }
+    .hero .content {
+      animation: fadeInUp 1s ease;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--gold);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .zodiac-strip {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 15px 5%;
+      background: var(--card-bg);
+      scrollbar-width: none;
+    }
+    .zodiac-strip::-webkit-scrollbar {
+      display: none;
+    }
+    .zodiac-item {
+      flex: 0 0 auto;
+      padding: 10px 15px;
+      background: var(--bg);
+      border-radius: 20px;
+      color: var(--gold);
+      white-space: nowrap;
+      animation: scrollFade 5s infinite alternate;
+    }
+    @keyframes scrollFade {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    .services, .remedies, .testimonials {
+      padding: 60px 5%;
+    }
+    .service-grid, .remedy-grid, .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .service-card, .remedy-card, .testi-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .service-card a, .remedy-card a {
+      background: var(--gold);
+      color: #000;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .testimonials .testi-card p {
+      color: var(--text-primary);
+      font-style: italic;
+    }
+    .footer {
+      padding: 40px 5%;
+      text-align: center;
+      border-top: 1px solid var(--border-soft);
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h2 style="color:var(--gold); margin:0;">AstroVed</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#weekly">Weekly</a>
+      <a href="#consult">Consult</a>
+      <a href="#remedies">Remedies</a>
+      <a href="#academy">Academy</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="cta" href="#consult">Talk to an Astrologer</a>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="content">
+      <h1>Decode Your Stars. Book in 2 Taps.</h1>
+      <p>Astrology, Numerology, Vastu — reimagined for Gen Z clarity.</p>
+      <a class="cta" href="#consult">Start Now</a>
+    </div>
+  </section>
+
+  <section class="zodiac-strip" id="weekly">
+    <div class="zodiac-item">♈ Aries – 🔥 Mood Boost</div>
+    <div class="zodiac-item">♉ Taurus – 💼 Career Steady</div>
+    <div class="zodiac-item">♊ Gemini – 💘 Flirty Vibes</div>
+    <div class="zodiac-item">♋ Cancer – 😌 Calm Energy</div>
+    <div class="zodiac-item">♌ Leo – 💡 Creative High</div>
+    <div class="zodiac-item">♍ Virgo – ✨ Clean Wins</div>
+    <div class="zodiac-item">♎ Libra – 🤝 Love Alignment</div>
+    <div class="zodiac-item">♏ Scorpio – 🔮 Deep Thoughts</div>
+    <div class="zodiac-item">♐ Sagittarius – 🚀 Big Vision</div>
+    <div class="zodiac-item">♑ Capricorn – 📈 Hustle Mode</div>
+    <div class="zodiac-item">♒ Aquarius – 🌊 Go With Flow</div>
+    <div class="zodiac-item">♓ Pisces – 🎨 Dreamy Feels</div>
+  </section>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Astrology</h3>
+        <p>Get clarity with your natal chart.</p>
+        <a href="#consult">Book Now</a>
+      </div>
+      <div class="service-card">
+        <h3>Numerology</h3>
+        <p>Decode your destiny digits.</p>
+        <a href="#consult">Book Now</a>
+      </div>
+      <div class="service-card">
+        <h3>Vastu</h3>
+        <p>Balance your space energy.</p>
+        <a href="#consult">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="remedies" id="remedies">
+    <h2>Remedy Spotlight</h2>
+    <div class="remedy-grid">
+      <div class="remedy-card">
+        <h4>Yellow Sapphire</h4>
+        <p>Confidence & Career</p>
+        <p><strong>₹799</strong></p>
+        <a href="#">Buy Now</a>
+      </div>
+      <div class="remedy-card">
+        <h4>Rudraksha</h4>
+        <p>Spiritual Stability</p>
+        <p><strong>₹499</strong></p>
+        <a href="#">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>User Love</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>“Astrology never felt this modern and easy!”</p>
+        <small>@muskaan._</small>
+      </div>
+      <div class="testi-card">
+        <p>“Loved the vastu tips! Game changer.”</p>
+        <small>– Riya T.</small>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>
+      <a href="#consult">Consult</a>
+      <a href="#remedies">Store</a>
+      <a href="#academy">Blog</a>
+      <a href="#about">About</a>
+    </p>
+    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 20px;">
+      “Democratising Ancient Wisdom for Young India.”
+    </p>
+  </footer>
+
+  <script>
+    // Auto-scroll zodiac strip
+    const zodiacStrip = document.querySelector('.zodiac-strip');
+    let scrollInterval = setInterval(() => {
+      zodiacStrip.scrollBy({left: 100, behavior: 'smooth'});
+      if (zodiacStrip.scrollLeft + zodiacStrip.clientWidth >= zodiacStrip.scrollWidth) {
+        zodiacStrip.scrollTo({left: 0, behavior: 'smooth'});
+      }
+    }, 3000);
+  </script>
+</body>
+</html>
